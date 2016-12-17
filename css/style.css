@@ -1,0 +1,28 @@
+body{
+	font-family:arial;
+	font-size:0.5em;
+
+}
+
+.search{
+	//font-size:1.2em;
+}
+
+.sonnet{
+	padding-bottom:15px;
+	background-color:#ffffcc;
+}
+
+
+.title{
+	//font-size:1.2em;
+	//font-family:arial;
+	font-style:italic;
+	padding-bottom:5px;
+	color: white;
+	background-color:#666;
+}
+
+.lines{
+	//font-family:arial;
+}
