@@ -1,11 +1,9 @@
 body{
 	font-family:arial;
-	font-size:0.5em;
 
 }
 
 .search{
-	//font-size:1.2em;
 }
 
 .sonnet{
@@ -15,8 +13,7 @@ body{
 
 
 .title{
-	//font-size:1.2em;
-	//font-family:arial;
+
 	font-style:italic;
 	padding-bottom:5px;
 	color: white;
@@ -24,5 +21,4 @@ body{
 }
 
 .lines{
-	//font-family:arial;
 }
