@@ -12,3 +12,7 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.card .card-content .card-title {
+  line-height: 30px;
+}
