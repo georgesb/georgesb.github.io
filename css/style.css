@@ -1,24 +1,14 @@
-body{
-	font-family:arial;
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
 
+.icon-block {
+  padding: 0 15px;
 }
-
-.search{
-}
-
-.sonnet{
-	padding-bottom:15px;
-	background-color:#ffffcc;
-}
-
-
-.title{
-
-	font-style:italic;
-	padding-bottom:5px;
-	color: white;
-	background-color:#666;
-}
-
-.lines{
+.icon-block .material-icons {
+	font-size: inherit;
 }

@@ -9,8 +9,4 @@ app.controller('myController', function($scope, $http) {
         });
 });
 
-/* http://poetrydb.org/author,title/Shakespeare;Sonnet 
-
-./js/sonnets.json
-
-*/
+/* http://poetrydb.org/author,title/Shakespeare;Sonnet */

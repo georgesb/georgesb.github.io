@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+		<title>georgesb.com / sonnets</title>
+
+ <!-- CSS  -->
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+ <!-- SCRIPTS  -->
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+	</head>
+
+	<body ng-app="myApp" ng-controller="myController">
+
+		<label class="search">Search: <input ng-model="searchText" style="width:140px"></label><br><br>
+
+		<div ng-repeat="item in items | filter:searchText" class="sonnet">
+			<div class="title">{{item.title}}</div>
+			<div ng-repeat="line in item.lines"  class="lines">
+				{{line}}
+			</div>
+		</div>
+
+	</body>
+</html>
