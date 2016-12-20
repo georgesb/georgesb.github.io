@@ -14,7 +14,8 @@
 }
 
 .card .card-content .card-title {
-  line-height: 30px;
+  line-height: 26px;
+  font-size:1.3em;
 }
 
 body {
