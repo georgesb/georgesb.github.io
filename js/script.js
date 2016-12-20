@@ -1,16 +1,22 @@
 var app = angular.module('myApp', []);
 
-var url = "./js/sonnets.json";
-
 app.controller('myController', function($scope, $http) {
-  $http.get(url)
-       .then(function(response){
-          $scope.items = response.data;                
+
+    var url;
+    var id;
+
+    $scope.init = function(id) {
+        $scope.id = id;
+        url = "http://poetrydb.org/author/" + $scope.id + "/title,lines";
+        $http.get(url).then(function(response) {
+            $scope.items = response.data;
         });
+    };
+
+    $scope.getID = function(){
+    	return $scope.id;
+    }
+
+
 });
 
-/* http://poetrydb.org/author,title/Shakespeare;Sonnet 
-
-./js/sonnets.json
-
-*/
