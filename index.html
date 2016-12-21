@@ -38,7 +38,6 @@
 			<div class="navbar-fixed">
 				<nav class="indigo darken-3" role="navigation">
 					<div class="nav-wrapper container">
-						<div class="row">
 							<form>
 								<div class="input-field col s12">
 									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
@@ -46,7 +45,6 @@
 									<i class="material-icons" ng-click="searchText = ''">close</i>
 								</div>
 							</form>
-						</div>
 					</div>
 				</nav>
 			</div>
@@ -132,6 +130,8 @@
 							});
 						}
 					 }
+					if(term.length <= 2) { $context.show().unmark(); }
+
 				});
 			});
 	</script>
