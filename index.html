@@ -121,7 +121,6 @@
 					$context = $("div.context");
 				$input.on("input", function() {
 					var term = $(this).val();
-					if(term.length > 2){
 					$context.show().unmark();
 					if (term) {
 						$context.mark(term, {
@@ -129,7 +128,6 @@
     						"diacritics": false
 							});
 						}
-					 }
 				});
 			});
 		</script>
