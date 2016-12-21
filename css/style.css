@@ -27,3 +27,12 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+mark{
+	background-color:#e6e6e6;
+    border-radius: 12px;
+	padding:1px;
+	padding-left:5px;
+	padding-right:5px;
+}
+

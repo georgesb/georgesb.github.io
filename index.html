@@ -13,6 +13,7 @@
 
  <!-- SCRIPTS  -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.4.3/jquery.mark.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script type="text/javascript" src="js/sonnets.js"></script>
 
@@ -40,7 +41,7 @@
 						<div class="row">
 							<form>
 								<div class="input-field col s12">
-									<input id="search" type="search" required  ng-model="searchText" placeholder="Search">
+									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
 									<label for="search"><i class="material-icons">search</i></label>
 									<i class="material-icons" ng-click="searchText = ''">close</i>
 								</div>
@@ -56,6 +57,8 @@
 						<div class="col s12 m12 l12">
 							<div><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-3">Show/Hide Sonnets</a>
 							</div>
+
+							<div class="context">
 							<div class="card teal darken-1" ng-repeat="item in items | filter:searchText" >
 								<div class="card-content white-text">
 									<span class="card-title" >{{item.title}}</span><br><br>
@@ -64,6 +67,8 @@
 									</div>
 								</div>
 							</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -110,5 +115,23 @@
 
     </script>
 
+		<script>
+			$(function() {
+				var $input = $("input[name='keyword']"),
+					$context = $("div.context");
+				$input.on("input", function() {
+					var term = $(this).val();
+					if(term.length > 2){
+					$context.show().unmark();
+					if (term) {
+						$context.mark(term, {
+							"separateWordSearch": false,
+    						"diacritics": false
+							});
+						}
+					 }
+				});
+			});
+		</script>
 	</body>
 </html>
