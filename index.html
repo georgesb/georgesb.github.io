@@ -115,21 +115,25 @@
 
     </script>
 
-		<script>
+	<script>
 			$(function() {
-				var $input = $("input[name='keyword']"),
-					$context = $("div.context");
+				var $input = $("input[name='keyword']"), $context = $("div.context");
+	
 				$input.on("input", function() {
+
 					var term = $(this).val();
-					$context.show().unmark();
-					if (term) {
-						$context.mark(term, {
-							"separateWordSearch": false,
-    						"diacritics": false
+
+					if(term.length > 2){
+						$context.show().unmark();
+						if (term) {
+							$context.mark(term, {
+								"separateWordSearch": false,
+    							"diacritics": false
 							});
 						}
+					 }
 				});
 			});
-		</script>
+	</script>
 	</body>
 </html>
