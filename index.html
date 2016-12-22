@@ -37,9 +37,9 @@
 
 			<div class="navbar-fixed">
 				<nav class="indigo darken-3" role="navigation">
-					<div class="nav-wrapper container">
+					<div class="nav-wrapper container navbar-fixed">
 							<form>
-								<div class="input-field col s12">
+								<div class="input-field">
 									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
 									<label for="search"><i class="material-icons">search</i></label>
 									<i class="material-icons" id="target" ng-click="searchText = ''">close</i>
@@ -53,10 +53,10 @@
 				<div class="section">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<div><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-3">Show/Hide Sonnets</a>
+							<div style="position:fixed;z-index:100"><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-3"><i class="small material-icons">{{getCats()}}</i></a>
 							</div>
 
-							<div class="context">
+							<div class="context" style="margin-top:50px">
 							<div class="card teal darken-1" ng-repeat="item in items | filter:searchText" >
 								<div class="card-content white-text">
 									<span class="card-title" >{{item.title}}</span><br><br>
@@ -113,35 +113,30 @@
 
     </script>
 
-	<script>
+		<script>
 			$(function() {
-				var $input = $("input[name='keyword']"), $context = $("div.context");
-	
+				var $input = $("input[name='keyword']"),
+					$context = $("div.context");
 				$input.on("input", function() {
-
 					var term = $(this).val();
-
 					if(term.length > 2){
-						$context.show().unmark();
-						if (term) {
-							$context.mark(term, {
-								"separateWordSearch": false,
-    							"diacritics": false
+					$context.show().unmark();
+					if (term) {
+						$context.mark(term, {
+							"separateWordSearch": false,
+    						"diacritics": false
 							});
 						}
 					 }
-					if(term.length <= 2) { $context.show().unmark(); }
-
 				});
 			});
-	</script>
+		</script>
 
-<script>
- 
-$( "#target" ).click(function() {
-					$context = $("div.context");
-					$context.show().unmark();
-});
-    </script>
+		<script>
+			$( "#target" ).click(function() {
+			$context = $("div.context");
+			$context.show().unmark();
+			});
+		</script>
 	</body>
 </html>
