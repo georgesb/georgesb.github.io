@@ -42,7 +42,7 @@
 								<div class="input-field col s12">
 									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
 									<label for="search"><i class="material-icons">search</i></label>
-									<i class="material-icons" ng-click="searchText = ''">close</i>
+									<i class="material-icons" id="target" ng-click="searchText = ''">close</i>
 								</div>
 							</form>
 					</div>
@@ -135,5 +135,13 @@
 				});
 			});
 	</script>
+
+<script>
+ 
+$( "#target" ).click(function() {
+					$context = $("div.context");
+					$context.show().unmark();
+});
+    </script>
 	</body>
 </html>
