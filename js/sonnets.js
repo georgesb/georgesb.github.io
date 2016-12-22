@@ -4,9 +4,15 @@ var url = "./js/sonnets.json";
 
 app.controller('myController', function($scope, $http) {
 
- $scope.goCats = false;
+   $scope.goCats = false;
 
-  $http.get(url)
+   $scope.getCats = function(){
+		if($scope.goCats==true)
+    	return "visibility_off";
+		else return "visibility";
+    }
+
+  	$http.get(url)
        .then(function(response){
           $scope.items = response.data;                
         });
