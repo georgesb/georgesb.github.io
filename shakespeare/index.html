@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>georgesb.com / shakespeare</title>
+
+  <!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+ <!-- SCRIPTS  -->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.4.3/jquery.mark.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	<!-- scrolltop  -->
+		<link rel="stylesheet" href="css/easing.css">
+		<link rel="stylesheet" href="css/jquery.scrolltop.css">
+		<style>
+			.custom-scrolltop {
+			font-size: 1.5em;
+			line-height: 40px;
+			border-radius: 50%;
+			z-index: 2147483647;
+			}
+		</style>
+	</head>
+	<body ng-app="myApp" ng-controller="myController">
+		<main>
+			<div class="navbar-fixed">
+				<nav class="indigo darken-3" role="navigation">
+					<div class="nav-wrapper container navbar-fixed">
+						<form>
+							<div class="input-field">
+								<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
+								<label for="search"><i class="material-icons">search</i></label>
+								<i class="material-icons" id="target" ng-click="searchText = ''";>close</i>
+							</div>
+						</form>
+					</div>
+				</nav>
+			</div>
+			<div class="container context">
+				<div class="row">
+					<div class="col s9 m9 l10">
+  <!-- Dropdown Trigger -->
+						<br>
+						<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Select</a>
+
+  <!-- Dropdown Structure -->
+						<ul id='dropdown1' class='dropdown-content'>
+							<li><a href="#"  ng-click="show()">Home</a></li>
+							<li><a href="#"  ng-click="ng-init('hamlet.json');hide()"  >Hamlet</a></li>
+							<li><a href="#"  ng-click="ng-init('summerdream.json');hide()"   ng-click="hide()">A Midsummer Night's Dream</a>
+							</li>
+						</ul>
+						<div class="container context">
+							<div class="row center">
+								<br><br><br>
+								<div class="col s12" ng-show="toggle">
+									<blockquote>
+										<h5 class="header center grey-text">georgesb.com/shakespeare</h5><br>
+										<h3 class="header center orange-text">A Searchable Collection of Shakespeare's Plays</h3>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+						<div ng-repeat="item in items" ng-show="play">
+							<h4>{{item.TITLE}}</h4>
+							<div ng-repeat="item in item.ACT" class="section scrollspy text" id="{{item.TITLE}}">
+								<h5>{{item.TITLE}}</h5>
+								<div ng-repeat="item in item.SCENE">
+									{{item.TITLE}}<br><br>
+									<div ng-repeat="item in item.SPEECH | filter:searchText">
+										{{item.SPEAKER}}<br><br>
+										<div ng-repeat="item in item.LINE">
+											{{item}}<br>
+										</div>
+										<br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s3 m3 l2"  ng-show="play">
+						<ul class="section table-of-contents" style="position:fixed">
+							<li><a href="#ACT I">Act I</a></li>
+							<li><a href="#ACT II">Act II</a></li>
+							<li><a href="#ACT III">Act III</a></li>
+							<li><a href="#ACT IV">Act IV</a></li>
+							<li><a href="#ACT V">Act V</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="page-footer  indigo">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<a href="http://georgesb.com"><h5 class="orange-text text-lighten-2">georgesb.com</h5></a>
+					</div>
+					<div class="col l12 m 12 s12">
+						<a class="white-text" href="http://georgesb.com"><i class="small material-icons">launch</i></a>
+						<a class="white-text" href="https://www.linkedin.com/in/george-benainous"><i class="small material-icons">info_outline</i></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright" >
+				<div class="container">
+					Thanks to <a class="orange-text text-lighten-2" href="http://materializecss.com">Materialize</a>
+					and <a class="orange-text text-lighten-2" href="https://www.ibiblio.org/xml/examples/shakespeare/">ibiblio.org</a>
+				</div>
+			</div>
+		</footer>
+<!--  Scripts-->
+		<script src="js/materialize.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/jquery.scrolltop.js"></script>
+
+
+<!-- init scrolltop -->
+		<script>
+			(function($){
+			$.scrolltop({
+			template: '<i class="fa fa-chevron-up"></i>',
+			class: 'custom-scrolltop'
+			});
+			})(jQuery);
+		</script>
+		<script>
+			$(document).ready(function(){
+			$('.scrollspy').scrollSpy();
+			$('.dropdown-button').dropdown({
+			inDuration: 300,
+			outDuration: 225,
+			constrain_width: false, // Does not change width of dropdown to that of the activator
+			hover: false, // Activate on hover
+			gutter: 0, // Spacing from edge
+			belowOrigin: false, // Displays dropdown below the button
+			alignment: 'left' // Displays dropdown with edge aligned to the left of button
+			}
+			);
+			});
+			$( "#target" ).click(function() {
+			$context = $("div.context");
+			$context.show().unmark();
+			});
+		</script>
+		<script>
+			$(function() {
+			var $input = $("input[name='keyword']"),
+			$context = $("div.context");
+			$input.on("input", function() {
+			var term = $(this).val();
+			if(term.length > 1){
+			$context.show().unmark();
+			if (term) {
+			$context.mark(term, {
+			"separateWordSearch": false,
+			"diacritics": false
+			});
+			}
+			}
+			});
+			});
+		</script>
+		<script>
+			window.addEventListener("hashchange", function () {
+			window.scrollTo(window.scrollX, window.scrollY - 50);
+			});
+		</script>
+	</body>
+</html>

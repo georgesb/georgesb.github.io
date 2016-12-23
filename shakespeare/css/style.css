@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+
+
+mark{
+	background-color:#ccff66;
+    border-radius: 12px;
+	padding:1px;
+	padding-left:5px;
+	padding-right:5px;
+	border: 1px solid pink;
+	color:black;
+}
+
+
+main {
+    flex: 1 0 auto;
+  }
+
+
+
+.text{
+	font-family:times;
+	background-color:white;
+	color: black;
+}
+
