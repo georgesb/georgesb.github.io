@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -34,68 +35,67 @@
 		<main>
 			<div class="navbar-fixed">
 				<nav class="indigo darken-3" role="navigation">
-				<div class="nav-wrapper container navbar-fixed">
-						
-
-					<div class="row">
-
-						<div class="col s12 m8 l9">
-							<form>
-								<div class="input-field">
-									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search" style=" display: inline-block;min-height:60px">
-									<label for="search"><i class="material-icons">search</i></label>
-									<i class="material-icons" id="target" ng-click="searchText = ''";>close</i>
-								</div>
-							</form>
+					<div class="nav-wrapper container navbar-fixed">
+						<div class="row">
+							<div class="col s12 m8 l9">
+								<a href="#" class="brand-logo" ng-show="toggle">Shakespeare</a>
+								<form>
+									<div class="input-field"  ng-show="play">
+										<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search" style=" display: inline-block;min-height:40px">
+										<label for="search"><i class="material-icons">search</i></label>
+										<i class="material-icons" id="target" ng-click="searchText = ''";>close</i>
+									</div>
+								</form>
+							</div>
+							<div class="col s12 m4 l3 hide-on-small-only">
+								<ul class="right">
+									<li class="active"><a href="index.html">Plays</a></li>
+									<li><a href="http://georgesb.com/sonnets">Sonnets</a></li>
+								</ul>
+							</div>
 						</div>
-	
-						<div class="col s12 m4 l3 hide-on-small-only">
-							<ul class="right">
-								<li class="active"><a href="#">Plays</a></li>
-								<li><a href="http://georgesb.com/sonnets">Sonnets</a></li>
-							</ul>
-						</div>
-
 					</div>
-
-				</div>
 				</nav>
 			</div>
-
+							<div class="row container center">
+								<br>
+								<div class="col s12" ng-show="toggle">
+									<div class="collection with-header">
+										<a href="#!" class="collection-item active"><img src="william-shakespeare.jpg" height="120px"></a>
+										<a href="#!" class="collection-item black-text"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a>
+										<a href="#!" class="collection-item black-text" ng-click="ng-init('julius.json');hide()">Julius Caesar</a>
+										<a href="#!" class="collection-item black-text" ng-click="ng-init('macbeth.json');hide()">MacBeth</a>
+										<a href="#!" class="collection-item black-text"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a>
+										<a href="#!" class="collection-item black-text" ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
+										<a href="#!" class="collection-item black-text" ng-click="ng-init('othello.json');hide()">Othello</a>
+										<a href="#!" class="collection-item black-text"  ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a>
+										<a href="#!" class="collection-item black-text" ng-click="ng-init('tempest.json');hide()">The Tempest</a>
+										<a href="#!" class="collection-item black-text"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a>
+									</div>
+								</div>
+							</div>
 			<div class="container context">
 				<div class="row">
 					<div class="col s9 m9 l10">
   <!-- Dropdown Trigger -->
 						<br>
-						<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Menu</a>
+						<a class='dropdown-button btn' href='#' data-activates='dropdown1'  ng-show="play">Menu</a>
 
   <!-- Dropdown Structure -->
 						<ul id='dropdown1' class='dropdown-content'>
 							<li><a href="#"  ng-click="show()">Home</a></li>
 							<li class="divider"></li>
-							<li><a href="#"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a></li>
+							<li ><a href="#"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a></li>
 							<li><a href="#"  ng-click="ng-init('julius.json');hide()">Julius Caesar</a></li>
 							<li><a href="#"  ng-click="ng-init('macbeth.json');hide()">MacBeth</a></li>
 							<li><a href="#"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a></li>
 							<li><a href="#"  ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
-						    <li><a href="#"  ng-click="ng-init('othello.json');hide()">Othello</a></li>
+							<li><a href="#"  ng-click="ng-init('othello.json');hide()">Othello</a></li>
 							<li><a href="#"  ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a></li>
 							<li><a href="#"  ng-click="ng-init('tempest.json');hide()">The Tempest</a></li>
 							<li><a href="#"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a></li>
-
 						</ul>
-						<div class="container context">
-							<div class="row center">
-								<br><br><br>
-								<div class="col s12" ng-show="toggle">
-									<blockquote>
-										<h5 class="center grey-text">georgesb.com</h5>
-										<h5 class="center grey-text">/shakespeare</h5><br>
-										<h4 class="center orange-text">A Searchable Collection of Shakespeare's Plays</h4>
-									</blockquote>
-								</div>
-							</div>
-						</div>
+
 						<div ng-repeat="item in items" ng-show="play">
 							<h4>{{item.TITLE}}</h4>
 							<div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
@@ -140,7 +140,7 @@
 			<div class="footer-copyright" >
 				<div class="container">
 					Thanks to <a class="orange-text text-lighten-2" href="http://materializecss.com">Materialize</a>
-					and <a class="orange-text text-lighten-2" href="https://www.ibiblio.org/xml/examples/shakespeare/">ibiblio.org</a>
+					and <a class="orange-text text-lighten-2" href="https://www.ibiblio.org/xml/examples/shakespeare/">iBiblio.org</a>
 				</div>
 			</div>
 		</footer>
