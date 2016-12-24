@@ -27,4 +27,16 @@ var id;
     };
 });
 
-/* summerdream.json */
+app.filter('remove', function() {
+    return function(x) {
+        var i, c, txt = "";
+        for (i = 0; i < x.length; i++) {
+            c = x[i];
+            if (i % 2 == 0) {
+                if(c == '[' || c == ']') c ='';
+            }
+            txt += c;
+        }
+        return txt;
+    };
+});
