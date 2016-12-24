@@ -77,7 +77,7 @@
 								<div ng-repeat="item in item.SCENE">
 									{{item.TITLE}}<br><br>
 									<div ng-repeat="item in item.SPEECH | filter:searchText">
-										{{item.SPEAKER}}<br><br>
+										<span style="color:#990000; font-style:bold">{{item.SPEAKER | uppercase}}</span><br><br>
 										<div ng-repeat="item in item.LINE">
 											{{item}}<br>
 										</div>
