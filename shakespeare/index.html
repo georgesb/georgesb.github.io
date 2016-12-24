@@ -55,12 +55,15 @@
 						<ul id='dropdown1' class='dropdown-content'>
 							<li><a href="#"  ng-click="show()">Home</a></li>
 							<li><a href="#"  ng-click="ng-init('hamlet.json');hide()"  >Hamlet</a></li>
-							<li><a href="#"  ng-click="ng-init('macbeth.json');hide()"  >Macbeth</a></li>
+							<li><a href="#"  ng-click="ng-init('julius.json');hide()"  >Julius Caesar</a></li>
+							<li><a href="#"  ng-click="ng-init('macbeth.json');hide()"  >MacBeth</a></li>
 							<li><a href="#"  ng-click="ng-init('summerdream.json');hide()"   ng-click="hide()">A Midsummer Night's Dream</a>
+							<li><a href="#"  ng-click="ng-init('romeo.json');hide()"  >Romeo and Juliet</a></li>
 							</li>
 						</ul>
 						<div class="container context">
 							<div class="row center">
+								<br><br><br>
 								<div class="col s12" ng-show="toggle">
 									<blockquote>
 										<h5 class="center grey-text">georgesb.com</h5>
@@ -72,9 +75,9 @@
 						</div>
 						<div ng-repeat="item in items" ng-show="play">
 							<h4>{{item.TITLE}}</h4>
-							<div ng-repeat="item in item.ACT" class="section scrollspy text" id="{{item.TITLE}}">
+							<div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
 								<h5>{{item.TITLE}}</h5>
-								<div ng-repeat="item in item.SCENE">
+								<div ng-repeat="item in item.SCENE  | filter:searchText">
 									{{item.TITLE}}<br><br>
 									<div ng-repeat="item in item.SPEECH | filter:searchText">
 										<span style="color:#990000; font-style:bold">{{item.SPEAKER | uppercase}}</span><br><br>
@@ -88,7 +91,7 @@
 						</div>
 					</div>
 					<div class="col s3 m3 l2"  ng-show="play">
-						<ul class="section table-of-contents" style="position:fixed;">
+						<ul class="section table-of-contents" style="position:fixed">
 							<li><a href="#ACT I">Act I</a></li>
 							<li><a href="#ACT II">Act II</a></li>
 							<li><a href="#ACT III">Act III</a></li>
