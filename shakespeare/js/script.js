@@ -20,6 +20,7 @@ var id;
 
     $scope.init = function(id) {
         $scope.id = id;
+		$scope.items = '';
         url =  "./js/" + $scope.id;
         $http.get(url).then(function(response) {
             $scope.items = response.data;
