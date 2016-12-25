@@ -107,7 +107,7 @@
 							<li><a href="#"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a></li>
 								<li><a href="#"  ng-click="ng-init('winter.json');hide()">A Winter's Tale</a></li>
 					</ul>
-						<div class="spinner center" ng-show="loading"><br><br><br><br><br><img src="js/loading.gif"></div>
+
 						<div ng-repeat="item in items" ng-show="play">
 							<h4>{{item.TITLE}}</h4>
 							<div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
