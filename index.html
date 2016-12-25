@@ -10,6 +10,7 @@
 		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
 
  <!-- SCRIPTS  -->
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -20,6 +21,7 @@
 	<!-- scrolltop  -->
 	<link rel="stylesheet" href="css/easing.css">
     <link rel="stylesheet" href="css/jquery.scrolltop.css">
+
     <style>
         .custom-scrolltop {
             font-size: 1.5em;
@@ -35,9 +37,12 @@
 
 		<main>
 
-			<div class="navbar-fixed">
-				<nav class="indigo darken-3" role="navigation">
+			<div class="no-print navbar-fixed">
+				<nav class="indigo darken-2" role="navigation">
 					<div class="nav-wrapper container navbar-fixed">
+<div class="row">
+<div class="col s12 m8 l9">
+
 							<form>
 								<div class="input-field">
 									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
@@ -45,6 +50,16 @@
 									<i class="material-icons" id="target" ng-click="searchText = ''">close</i>
 								</div>
 							</form>
+</div>
+
+							<div class="col s12 m4 l3 hide-on-small-only">
+								<ul class="right">
+									<li><a href="http://georgesb.com/shakespeare">Plays</a></li>
+									<li class="active"><a href="#">Sonnets</a></li>
+								</ul>
+							</div>
+
+</div>
 					</div>
 				</nav>
 			</div>
@@ -53,7 +68,7 @@
 				<div class="section">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<div style="position:fixed;z-index:100"><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-3"><i class="small material-icons">{{getCats()}}</i></a>
+							<div style="no-print position:fixed;z-index:100"><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-2"><i class="no-print small material-icons">{{getCats()}}</i></a>
 							</div>
 
 							<div class="context" style="margin-top:50px">
@@ -75,7 +90,7 @@
 		</main>
 
 		<footer class="page-footer  indigo">
-			<div class="container">
+			<div class="no-print container">
 				<div class="row">
 					<div class="col l6 s12">
 						<a href="http://georgesb.com"><h5 class="orange-text text-lighten-2">georgesb.com</h5></a>
@@ -87,7 +102,7 @@
 				</div>
 			</div>
 
-			<div class="footer-copyright" >
+			<div class="no-print footer-copyright" >
 				<div class="container">
 					Thanks to <a class="orange-text text-lighten-2" href="http://materializecss.com">Materialize</a>
 					and <a class="orange-text text-lighten-2" href="http://poetrydb.org">PoetryDB.org</a>
