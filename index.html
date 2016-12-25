@@ -57,8 +57,8 @@
 							</div>
 
 							<div class="context" style="margin-top:50px">
-							<div class="card teal darken-1" ng-repeat="item in items | filter:searchText" >
-								<div class="card-content white-text">
+							<div class="card" ng-repeat="item in items | filter:searchText" >
+								<div class="card-content">
 									<span class="card-title" >{{item.title}}</span><br><br>
 									<div ng-repeat="line in item.lines" ng-show="goCats">
 										{{line}}

@@ -13,15 +13,20 @@
 	font-size: inherit;
 }
 
+.card .card-content{
+	font-family:times;
+}
 .card .card-content .card-title {
   line-height: 26px;
-  font-size:1.3em;
+  font-size:1.34em;
+
 }
 
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+	background-color:#eeeeee;
   }
 
   main {
@@ -29,10 +34,12 @@ body {
   }
 
 mark{
-	background-color:#e6e6e6;
+	background-color:#ccff66;
     border-radius: 12px;
 	padding:1px;
 	padding-left:5px;
 	padding-right:5px;
+	border: 1px solid pink;
+	color:black;
 }
 
