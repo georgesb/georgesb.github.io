@@ -5,6 +5,7 @@ app.controller('myController', function($scope, $http) {
 
 var url;
 var id;
+  $scope.loading = true;
 
 
   $scope.toggle = true;
@@ -24,6 +25,7 @@ var id;
         url =  "./js/" + $scope.id;
         $http.get(url).then(function(response) {
             $scope.items = response.data;
+			$scope.loading = false;
         });
     };
 });
