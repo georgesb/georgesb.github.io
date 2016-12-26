@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
 
  <!-- SCRIPTS  -->
@@ -19,57 +19,69 @@
 		<script type="text/javascript" src="js/sonnets.js"></script>
 
 	<!-- scrolltop  -->
-		<link rel="stylesheet" href="css/easing.css">
-		<link rel="stylesheet" href="css/jquery.scrolltop.css">
-		<style>
-			.custom-scrolltop {
-			font-size: 1.5em;
-			line-height: 40px;
-			border-radius: 50%;
+	<link rel="stylesheet" href="css/easing.css">
+    <link rel="stylesheet" href="css/jquery.scrolltop.css">
+
+    <style>
+        .custom-scrolltop {
+            font-size: 1.5em;
+            line-height: 40px;
+            border-radius: 50%;
 			z-index: 2147483647;
-			}
-		</style>
+        }
+
+    </style>
+
 	</head>
 	<body ng-app="myApp" ng-controller="myController" ng-cloak>
+
 		<main>
+
 			<div class="no-print navbar-fixed">
 				<nav class="indigo darken-2" role="navigation">
 					<div class="nav-wrapper container navbar-fixed">
-						<div class="row">
-							<div class="col s12 m8 l9">
-								<form>
-									<div class="input-field">
-										<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
-										<label for="search"><i class="material-icons">search</i></label>
-										<i class="material-icons" id="target" ng-click="searchText = ''">close</i>
-									</div>
-								</form>
-							</div>
+<div class="row">
+<div class="col s12 m8 l9">
+
+							<form>
+								<div class="input-field">
+									<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search">
+									<label for="search"><i class="material-icons">search</i></label>
+									<i class="material-icons" id="target" ng-click="searchText = ''">close</i>
+								</div>
+							</form>
+</div>
+
 							<div class="col s12 m4 l3 hide-on-small-only">
 								<ul class="right">
 									<li><a href="http://georgesb.com/shakespeare">Plays</a></li>
 									<li class="active"><a href="#">Sonnets</a></li>
 								</ul>
 							</div>
-						</div>
+
+</div>
 					</div>
 				</nav>
 			</div>
-
-			<br>
 
 			<div class="container">
 				<div class="section">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<div class="context" >
-								<ul class="collapsible popout" data-collapsible="accordion">
-									<li ng-repeat="item in items | filter:searchText">
-										<div class="collapsible-header"  style="padding:15px;padding-left:25px;font-family:times;font-size:1.3em"><i class="large material-icons">subject</i>{{item.title}}</div>
-										<div class="collapsible-body" style="padding:30px;background-color:white;font-family:times;font-size:1.1em"><div ng-repeat="line in item.lines">{{line}}</div></div>
-									</li>
+							<div style="no-print position:fixed;z-index:100"><a href="#" ng-click="goCats = !goCats" class="btn btn-primary btn-lg indigo darken-2"><i class="no-print small material-icons">{{getCats()}}</i></a>
 							</div>
-							</ul>
+
+							<div class="context" style="margin-top:50px">
+							<div class="card" ng-repeat="item in items | filter:searchText" >
+								<div class="card-content">
+									<span class="card-title" >{{item.title}}</span><br><br>
+									<div ng-repeat="line in item.lines" ng-show="goCats">
+										{{line}}
+									</div>
+								</div>
+							</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -89,6 +101,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="no-print footer-copyright" >
 				<div class="container">
 					Thanks to <a class="orange-text text-lighten-2" href="http://materializecss.com">Materialize</a>
@@ -99,50 +112,45 @@
 
   <!--  Scripts-->
 		<script src="js/materialize.js"></script>
-		<script src="js/init.js"></script>
-		<script src="js/jquery.scrolltop.js"></script>
+		<script src="js/init.js"></script>    <script src="js/jquery.scrolltop.js"></script>
 
-
-<!-- init collapsible -->
-		<script>
-			$(document).ready(function(){
-				$('.collapsible').collapsible();
-			});
-  
-		</script>
 
 <!-- init scrolltop -->
-		<script>
-			(function($){
-				$.scrolltop({
-					template: '<i class="fa fa-chevron-up"></i>',
-					class: 'custom-scrolltop'
-				});
-			})(jQuery);
-		</script>
+    <script>
+        (function($){
+
+            $.scrolltop({
+                template: '<i class="fa fa-chevron-up"></i>',
+                class: 'custom-scrolltop'
+            });
+
+        })(jQuery);
+
+    </script>
+
 		<script>
 			$(function() {
 				var $input = $("input[name='keyword']"),
 					$context = $("div.context");
-
-			$input.on("input", function() {
-				var term = $(this).val();
+				$input.on("input", function() {
+					var term = $(this).val();
 					if(term.length > 2){
 					$context.show().unmark();
-				if (term) {
-					$context.mark(term, {
-						"separateWordSearch": false,
-						"diacritics": false
-						});
+					if (term) {
+						$context.mark(term, {
+							"separateWordSearch": false,
+    						"diacritics": false
+							});
 						}
-					}
+					 }
 				});
 			});
 		</script>
+
 		<script>
 			$( "#target" ).click(function() {
-				$context = $("div.context");
-				$context.show().unmark();
+			$context = $("div.context");
+			$context.show().unmark();
 			});
 		</script>
 	</body>
