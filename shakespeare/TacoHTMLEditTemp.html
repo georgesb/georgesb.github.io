@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,6 +21,7 @@
 	<!-- scrolltop  -->
 		<link rel="stylesheet" href="css/easing.css">
 		<link rel="stylesheet" href="css/jquery.scrolltop.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
 		<style>
 			.custom-scrolltop {
 			font-size: 1.5em;
@@ -33,11 +33,11 @@
 	</head>
 	<body ng-app="myApp" ng-controller="myController">
 		<main>
-			<div class="navbar-fixed">
-				<nav class="indigo darken-3" role="navigation">
+			<div class="no-print navbar-fixed">
+				<nav class="indigo darken-2" role="navigation">
 					<div class="nav-wrapper container navbar-fixed">
 						<div class="row">
-							<div class="col s12 m8 l9">
+							<div class="no-print col s12 m8 l9">
 								<a href="#" class="brand-logo" ng-show="toggle">Shakespeare</a>
 								<form>
 									<div class="input-field"  ng-show="play">
@@ -57,55 +57,60 @@
 					</div>
 				</nav>
 			</div>
-							<div class="row container center">
-								<br>
-								<div class="col s12" ng-show="toggle">
-									<div class="collection with-header">
-										<a href="#!" class="collection-item active"><img src="william-shakespeare.jpg" height="120px" class="z-depth-3"></a>
-											<a href="#!" class="collection-item black-text"  ng-click="ng-init('asyou.json');hide()">As You Like It</a>
-									<a href="#!" class="collection-item black-text"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('julius.json');hide()">Julius Caesar</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('lear.json');hide()">King Lear</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('macbeth.json');hide()">MacBeth</a>
-										<a href="#!" class="collection-item black-text"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('othello.json');hide()">Othello</a>
-										<a href="#!" class="collection-item black-text"  ng-click="ng-init('richard3.json');hide()">Richard III</a>
-										<a href="#!" class="collection-item black-text"  ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('shrew.json');hide()">The Taming of the Shrew</a>
-										<a href="#!" class="collection-item black-text" ng-click="ng-init('tempest.json');hide()">The Tempest</a>
-										<a href="#!" class="collection-item black-text"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a>
-										<a href="#!" class="collection-item black-text"  ng-click="ng-init('winter.json');hide()">A Winter's Tale</a>
-									</div>
-								</div>
-							</div>
+			<div class="row container center">
+				<br>
+				<div class="col s12" ng-show="toggle">
+					<div class="collection with-header" style="font-family:times;font-size:1.2em">
+						<a href="#!" class="collection-item active teal darken-3"><img src="william-shakespeare.jpg" height="120px" class="z-depth-3"></a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('asyou.json');hide()">As You Like It</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('julius.json');hide()">Julius Caesar</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('lear.json');hide()">King Lear</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('macbeth.json');hide()">MacBeth</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('measure.json');hide()">Measure for Measure</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('othello.json');hide()">Othello</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('richard3.json');hide()">Richard III</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('shrew.json');hide()">The Taming of the Shrew</a>
+						<a href="#!" class="collection-item black-text" ng-click="ng-init('tempest.json');hide()">The Tempest</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a>
+						<a href="#!" class="collection-item black-text"  ng-click="ng-init('winter.json');hide()">A Winter's Tale</a>
+					</div>
+				</div>
+			</div>
 			<div class="container context">
 				<div class="row">
-					<div class="col s9 m9 l10">
+					<div class="no-print col s9 m9 l10">
   <!-- Dropdown Trigger -->
 						<br>
-						<a class='dropdown-button btn' href='#' data-activates='dropdown1'  ng-show="play">Menu</a>
+						<a class='dropdown-button btn teal darken-2' href='#' data-activates='dropdown1'  ng-show="play">Menu</a>
 
   <!-- Dropdown Structure -->
 						<ul id='dropdown1' class='dropdown-content'>
-							<li><a href="#"  ng-click="show()">Home</a></li>
+							<li><a href="#"   style="color:#00796b"ng-click="show()">Home</a></li>
 							<li class="divider"></li>
-							<li ><a href="#"  ng-click="ng-init('asyou.json');hide()">As You Like It</a></li>
-							<li ><a href="#"  ng-click="ng-init('hamlet.json');hide()">Hamlet</a></li>
-							<li><a href="#"  ng-click="ng-init('julius.json');hide()">Julius Caesar</a></li>
-							<li><a href="#"  ng-click="ng-init('lear.json');hide()">King Lear</a></li>
-							<li><a href="#"  ng-click="ng-init('macbeth.json');hide()">MacBeth</a></li>
-							<li><a href="#"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a></li>
-							<li><a href="#"  ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
-							<li><a href="#"  ng-click="ng-init('othello.json');hide()">Othello</a></li>
-							<li><a href="#"  ng-click="ng-init('richard3.json');hide()">Richard III</a></li>
-							<li><a href="#"  ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a></li>
-							<li><a href="#"  ng-click="ng-init('shrew.json');hide()">The Taming of the Shrew</a></li>
-							<li><a href="#"  ng-click="ng-init('tempest.json');hide()">The Tempest</a></li>
-							<li><a href="#"  ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a></li>
-								<li><a href="#"  ng-click="ng-init('winter.json');hide()">A Winter's Tale</a></li>
-					</ul>
-
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('asyou.json');hide()">As You Like It</a></li>
+							<li ><a href="#"  style="color:#00796b" ng-click="ng-init('hamlet.json');hide()">Hamlet</a></li>
+							<li><a href="#"   style="color:#00796b" ng-click="ng-init('julius.json');hide()">Julius Caesar</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('lear.json');hide()">King Lear</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('macbeth.json');hide()">MacBeth</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('measure.json');hide()">Measure for Measure</a></li>
+							<li><a href="#" style="color:#00796b"  ng-click="ng-init('merchant.json');hide()">The Merchant of Venice</a></li>
+							<li><a href="#" style="color:#00796b"  ng-click="ng-init('summerdream.json');hide()">A Midsummer Night's Dream</a>
+							<li><a href="#" style="color:#00796b"  ng-click="ng-init('othello.json');hide()">Othello</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('richard3.json');hide()">Richard III</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('romeo.json');hide()">Romeo and Juliet</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('shrew.json');hide()">The Taming of the Shrew</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('tempest.json');hide()">The Tempest</a></li>
+							<li><a href="#"  style="color:#00796b" ng-click="ng-init('twelfth.json');hide()">Twelfth Night</a></li>
+							<li><a href="#" style="color:#00796b"  ng-click="ng-init('winter.json');hide()">A Winter's Tale</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s9 m9 l10">
 						<div ng-repeat="item in items" ng-show="play">
 							<h4>{{item.TITLE}}</h4>
 							<div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
@@ -123,7 +128,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col s3 m3 l2"  ng-show="play">
+					<div class="no-print col s3 m3 l2"  ng-show="play">
 						<ul class="section table-of-contents" style="position:fixed">
 							<li><a href="#ACT I">Act I</a></li>
 							<li><a href="#ACT II">Act II</a></li>
@@ -135,13 +140,13 @@
 				</div>
 			</div>
 		</main>
-		<footer class="page-footer  indigo">
+		<footer class="no-print page-footer  indigo">
 			<div class="container">
 				<div class="row">
-					<div class="col l6 s12">
+					<div class="no-print col l6 s12">
 						<a href="http://georgesb.com"><h5 class="orange-text text-lighten-2">georgesb.com</h5></a>
 					</div>
-					<div class="col l12 m 12 s12">
+					<div class="no-print col l12 m 12 s12">
 						<a class="white-text" href="http://georgesb.com"><i class="small material-icons">launch</i></a>
 						<a class="white-text" href="https://www.linkedin.com/in/george-benainous"><i class="small material-icons">info_outline</i></a>
 					</div>
