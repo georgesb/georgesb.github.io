@@ -85,10 +85,11 @@
 					<div class="no-print col s9 m9 l10">
   <!-- Dropdown Trigger -->
 						<br>
-						<a class='dropdown-button btn teal darken-2' href='#' data-activates='dropdown1'  ng-show="play">Menu</a>
+							<a class='dropdown-button btn teal darken-2 hide-on-small-only' href='#' data-activates='dropdown1'  ng-show="play" >Menu</a>
+						<a class=' btn teal darken-2 hide-on-med-and-up' href='http://georgesb.com/shakespeare' data-activates='dropdown1'  ng-show="play" >Menu</a>
 
   <!-- Dropdown Structure -->
-						<ul id='dropdown1' class='dropdown-content'>
+						<ul id='dropdown1' class='dropdown-content hide-on-small-only' >
 							<li><a href="#"   style="color:#00796b"ng-click="show()">Home</a></li>
 							<li class="divider"></li>
 							<li><a href="#"  style="color:#00796b" ng-click="ng-init('asyou.json');hide()">As You Like It</a></li>
