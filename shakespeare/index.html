@@ -118,6 +118,11 @@
 								<h5>{{item.TITLE}}</h5>
 								<div ng-repeat="item in item.SCENE  | filter:searchText">
 									{{item.TITLE}}<br><br>
+
+									<div ng-repeat="item in item.STAGEDIR | filter:searchText">
+										{{item}}<br>
+									</div><br><br>
+
 									<div ng-repeat="item in item.SPEECH | filter:searchText">
 										<span style="color:#990000; font-style:bold">{{item.SPEAKER | remove | uppercase }}</span><br><br>
 										<div ng-repeat="item in item.LINE">
