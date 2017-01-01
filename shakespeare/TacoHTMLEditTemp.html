@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.4.3/jquery.mark.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
+
 	<!-- scrolltop  -->
 		<link rel="stylesheet" href="css/easing.css">
 		<link rel="stylesheet" href="css/jquery.scrolltop.css">
@@ -36,7 +37,7 @@
 				<nav class="indigo darken-2" role="navigation">
 					<div class="nav-wrapper container navbar-fixed">
 						<div class="row">
-							<div class="no-print col s12 m8 l9">
+							<div class="no-print col s8 m8 l9">
 								<a href="#" class="brand-logo" ng-show="toggle">Shakespeare</a>
 								<form>
 									<div class="input-field"  ng-show="play">
@@ -46,10 +47,16 @@
 									</div>
 								</form>
 							</div>
-							<div class="col s12 m4 l3 hide-on-small-only">
+							<div class="col m4 l3 hide-on-small-only">
 								<ul class="right">
 									<li class="active"><a href="index.html">Plays</a></li>
 									<li><a href="http://georgesb.com/sonnets">Sonnets</a></li>
+								</ul>
+							</div>
+							<div class="col s4 hide-on-med-and-up">
+								<ul class="right">
+									<li class="active"><a href="http://georgesb.com/shakespeare"><i class="small material-icons"  style="color:green">description</i></a></li>
+									<li><a href="http://georgesb.com/sonnets""><i class="small material-icons">description</i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -84,10 +91,11 @@
 					<div class="no-print col s9 m9 l10">
   <!-- Dropdown Trigger -->
 						<br>
-						<a class='dropdown-button btn teal darken-2' href='#' data-activates='dropdown1'  ng-show="play">Menu</a>
+							<a class='dropdown-button btn teal darken-2 hide-on-small-only' href='#' data-activates='dropdown1'  ng-show="play" >Menu</a>
+						<a class=' btn teal darken-2 hide-on-med-and-up' href='http://georgesb.com/shakespeare' data-activates='dropdown1'  ng-show="play" >Menu</a>
 
   <!-- Dropdown Structure -->
-						<ul id='dropdown1' class='dropdown-content'>
+						<ul id='dropdown1' class='dropdown-content hide-on-small-only' >
 							<li><a href="#"   style="color:#00796b"ng-click="show()">Home</a></li>
 							<li class="divider"></li>
 							<li><a href="#"  style="color:#00796b" ng-click="ng-init('asyou.json');hide()">As You Like It</a></li>
@@ -116,6 +124,11 @@
 								<h5>{{item.TITLE}}</h5>
 								<div ng-repeat="item in item.SCENE  | filter:searchText">
 									{{item.TITLE}}<br><br>
+
+									<div ng-repeat="item in item.STAGEDIR | filter:searchText">
+										{{item}}<br>
+									</div><br><br>
+
 									<div ng-repeat="item in item.SPEECH | filter:searchText">
 										<span style="color:#990000; font-style:bold">{{item.SPEAKER | remove | uppercase }}</span><br><br>
 										<div ng-repeat="item in item.LINE">
@@ -129,6 +142,7 @@
 					</div>
 					<div class="no-print col s3 m3 l2"  ng-show="play">
 						<ul class="section table-of-contents" style="position:fixed">
+							<li><a href="#">Intro</a></li>
 							<li><a href="#ACT I">Act I</a></li>
 							<li><a href="#ACT II">Act II</a></li>
 							<li><a href="#ACT III">Act III</a></li>
