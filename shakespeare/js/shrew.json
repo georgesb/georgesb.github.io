@@ -66,7 +66,8 @@
       },
       "SCNDESCR": "SCENE  Padua, and Petruchio's country house.",
       "PLAYSUBT": "THE TAMING OF THE SHREW",
-      "ACT": {
+      "ACT": [
+      {
          "TITLE": "INDUCTION",
          "SCENE": [
             {
@@ -908,6 +909,8 @@
                ]
             }
          ]
+      }
+      ]
       },
       "ACT": [
          {
