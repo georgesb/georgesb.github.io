@@ -122,14 +122,14 @@
                         <h4>{{item.TITLE}}</h4>
                         <button ng-click="showDiv = !showDiv">{{item.PERSONAE.TITLE | uppercase}}</button>
                         <br>
-                        <div ng-show="showDiv" ng-repeat="item in item.PERSONAE.PERSONA  | filter:searchText">
+                        <div  ng-show="showDiv" ng-repeat="item in item.PERSONAE.PERSONA  | filter:searchText">
                             {{item}}
                             <br>
                         </div>
 
-                        <div ng-show="showDiv" ng-repeat="item in item.PERSONAE.PGROUP  | filter:searchText">
+                        <div  ng-show="showDiv" ng-repeat="item in item.PERSONAE.PGROUP  | filter:searchText">
                             {{item.GRPDESCR | uppercase}}
-                            <div ng-show="showDiv" ng-repeat="item in item.PERSONA  | filter:searchText">
+                            <div   ng-show="showDiv" ng-repeat="item in item.PERSONA  | filter:searchText">
                                 {{item}}
                                 <br>
                             </div>
@@ -155,30 +155,17 @@
                 <div class="col s9 m9 l10">
                     <div ng-repeat="item in items" ng-show="play">
                         <div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
-                            <h4>{{item.TITLE}}</h4>
-                            <span style="color:#990000; font-style:bold">{{item.PROLOGUE.TITLE}}</span>
-                          
-                            <div ng-repeat="item in item.PROLOGUE.SPEECH | filter:searchText">
-                                <br>
-                                <div ng-repeat="item in item.LINE">
-                                    {{item | remove}}
-                                    <br>
-                                </div>
-
-
-                            </div>
+                            <h5>{{item.TITLE}}</h5>
                             <div ng-repeat="item in item.SCENE  | filter:searchText">
-                               <br>
-                                <h5>{{item.TITLE}}</h5>
-                                
-                                
+                                {{item.TITLE}}
+                                <br>
+                                <br>
                                 <div ng-repeat="item in item.STAGEDIR | filter:searchText">
                                     {{item}}
                                     <br>
                                 </div>
                                 <br>
                                 <br>
-
                                 <div ng-repeat="item in item.SPEECH | filter:searchText">
                                     <span style="color:#990000; font-style:bold">{{item.SPEAKER | remove | uppercase }}</span>
                                     <br>
