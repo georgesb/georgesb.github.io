@@ -29,3 +29,8 @@ main {
 	color: black;
 }
 
+.collection .collection-item {
+  line-height: 1.6rem;
+  padding: 20px 20px;
+font-family:times;font-size:1.3em;
+}
