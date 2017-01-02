@@ -120,7 +120,7 @@
                 <div class="col s9 m9 l10">
                     <div ng-repeat="item in items  | filter:searchText" ng-show="play">
                         <h4>{{item.TITLE}}</h4>
-                        <button ng-click="showDiv = !showDiv">{{item.PERSONAE.TITLE | uppercase}}</button>
+                        <a class=" btn  grey lighten-5 black-text " ng-click="showDiv = !showDiv">{{item.PERSONAE.TITLE | uppercase}}</a>
                         <br>
                         <div ng-show="showDiv" ng-repeat="item in item.PERSONAE.PERSONA  | filter:searchText">
                             {{item}}
@@ -157,7 +157,7 @@
                         <div ng-repeat="item in item.ACT   | filter:searchText" class="section scrollspy text" id="{{item.TITLE}}">
                             <h4>{{item.TITLE}}</h4>
                             <span style="color:#990000; font-style:bold">{{item.PROLOGUE.TITLE}}</span>
-                          
+
                             <div ng-repeat="item in item.PROLOGUE.SPEECH | filter:searchText">
                                 <br>
                                 <div ng-repeat="item in item.LINE">
@@ -168,10 +168,10 @@
 
                             </div>
                             <div ng-repeat="item in item.SCENE  | filter:searchText">
-                               <br>
+                                <br>
                                 <h5>{{item.TITLE}}</h5>
-                                
-                                
+
+
                                 <div ng-repeat="item in item.STAGEDIR | filter:searchText">
                                     {{item}}
                                     <br>
