@@ -18,7 +18,7 @@
                   "CHRISTOPHER SLY, a tinker.",
                   "Hostess, Page, Players, Huntsmen, and Servants."
                ],
-               "GRPDESCR": "Persons in the Induction."
+               "GRPDESCR": "Persons in the ACTion."
             },
             {
                "PERSONA": [
@@ -66,7 +66,7 @@
       },
       "SCNDESCR": "SCENE  Padua, and Petruchio's country house.",
       "PLAYSUBT": "THE TAMING OF THE SHREW",
-      "INDUCT": {
+      "ACT": {
          "TITLE": "INDUCTION",
          "SCENE": [
             {
