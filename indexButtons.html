@@ -38,7 +38,8 @@
 				<nav class="indigo darken-2" role="navigation">
 					<div class="nav-wrapper container navbar-fixed">
 						<div class="row">
-							<div class="col s12 m8 l9">
+
+							<div class="col s8 m8 l9">
 								<form>
 									<div class="input-field">
 										<input id="search" type="search" name="keyword" required  ng-model="searchText" placeholder="Search" style="display: inline-block; min-height:40px">
@@ -47,12 +48,19 @@
 									</div>
 								</form>
 							</div>
-							<div class="col s12 m4 l3 hide-on-small-only">
+							<div class="col m4 l3 hide-on-small-only">
 								<ul class="right">
 									<li><a href="http://georgesb.com/shakespeare">Plays</a></li>
 									<li class="active"><a href="http://georgesb.com/sonnets"">Sonnets</a></li>
 								</ul>
 							</div>
+							<div class="col s4 hide-on-med-and-up">
+								<ul class="right">
+									<li><a href="http://georgesb.com/shakespeare"><i class="small material-icons" >radio_button_unchecked</i></a></li>
+									<li class="active"><a href="http://georgesb.com/sonnets"><i class="small material-icons">radio_button_checked</i></a></li>
+								</ul>
+							</div>
+
 						</div>
 					</div>
 				</nav>
@@ -64,7 +72,7 @@
 				<div class="section">
 					<div class="row">
 						<div class="col s12 m12 l12">
-						<div class="collection with-header center " style="padding-left:20px; padding-right:20px;border:none">						
+						<div class="collection with-header center" style="padding-left:20px; padding-right:20px;border:none">						
 										<a href="#!" class="collection-item active  red darken-4"><img src="william-shakespeare.jpg" height="120px" class="z-depth-3"></a>
 </div>
 
