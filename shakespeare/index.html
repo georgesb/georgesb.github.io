@@ -181,7 +181,7 @@
                                     <span style="color:#990000; font-style:bold">{{item.SPEAKER | remove | uppercase }}</span>
                                     <br>
                                     <br>
-                                    <div ng-repeat="item in item.LINE">
+                                    <div ng-repeat="item in item.LINE  track by $index">
                                         {{item | remove}}
                                         <br>
                                     </div>
