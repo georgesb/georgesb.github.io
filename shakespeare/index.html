@@ -170,7 +170,7 @@
                                 <h5>{{item.TITLE}}</h5>
 
 
-                                <div ng-repeat="item in item.STAGEDIR | filter:searchText">
+                                <div ng-repeat="item in item.STAGEDIR track by $index | filter:searchText">
                                     {{item}}
                                     <br>
                                 </div>
