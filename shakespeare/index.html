@@ -118,7 +118,7 @@
                 <div class="col s9 m9 l10">
                     <div ng-repeat="item in items  | filter:searchText" ng-show="play">
                         <h4>{{item.TITLE}}</h4>
-                        <a class=" btn  grey lighten-5 black-text " ng-click="showDiv = !showDiv">{{item.PERSONAE.TITLE | uppercase}}</a>
+                        <a class=" no-print btn  grey lighten-5 black-text " ng-click="showDiv = !showDiv">{{item.PERSONAE.TITLE | uppercase}}</a>
                         <br>
                         <div ng-show="showDiv" ng-repeat="item in item.PERSONAE.PERSONA  | filter:searchText">
                             {{item}}
