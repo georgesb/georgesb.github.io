@@ -1,6 +1,6 @@
 var img;
 function preload() {
-  img = loadImage('http://georgesb.github.io/p5jsimage/monkey.png');
+  img = loadImage('monkey.png');
 }
 function setup() {
   createCanvas(500,500);
